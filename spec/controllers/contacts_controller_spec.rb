@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe ContactsController, type: :request do
   describe 'GET #index' do
     before do
+      user = create(:user)
       create(:contact)
+      sign_in_request(user)
     end
     subject { get '/contacts' }
     it 'should render the contact page' do
@@ -12,7 +14,9 @@ RSpec.describe ContactsController, type: :request do
   end
   describe 'GET #show' do
     before do
-      create(:contact)
+      user = create(:user)
+      @contact = create(:contact)
+      sign_in_request(user)
     end
     subject { get "/contacts/#{@contact.id}" }
     it 'should render the contact page' do

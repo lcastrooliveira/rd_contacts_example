@@ -1,5 +1,6 @@
 # app/controllers/contacts_controller.rb
 class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
   before_action :ensure_json_request, only: :create
   protect_from_forgery with: :null_session, only: :create
 
