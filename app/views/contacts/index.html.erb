@@ -1,0 +1,17 @@
+<h1>Ola gente fina</h1>
+<table>
+  <thead>
+    <th>Email</th>
+    <th>Páginas Visitadas</th>
+    <th>Potencial</th>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.email, contact_path(contact) %></td>
+        <td><%= pretty_urls(contact.pages) %></td>
+        <td>Alto</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

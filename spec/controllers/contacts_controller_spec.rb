@@ -1,6 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe ContactsController, type: :request do
+  describe 'GET #index' do
+    before do
+      create(:contact)
+    end
+    subject { get '/contacts' }
+    it 'should render the contact page' do
+      expect(subject).to render_template(:index)
+    end
+  end
+  describe 'GET #show' do
+    before do
+      create(:contact)
+    end
+    subject { get "/contacts/#{@contact.id}" }
+    it 'should render the contact page' do
+      expect(subject).to render_template(:show)
+    end
+  end
   describe 'POST #create' do
     let(:headers) do
       { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }

@@ -3,6 +3,10 @@ class ContactsController < ApplicationController
   before_action :ensure_json_request, only: :create
   protect_from_forgery with: :null_session, only: :create
 
+  def index
+    @contacts = Contact.all
+  end
+
   def create
     contact = Contact.new(contact_params)
     contact.ip = request.remote_ip
@@ -11,6 +15,10 @@ class ContactsController < ApplicationController
     else
       render json: { errors: contact.errors }, status: 422
     end
+  end
+
+  def show
+    @contact = Contact.find(params[:id])
   end
 
   private
