@@ -11,6 +11,11 @@ RSpec.describe Contact, type: :model do
 
     expect(contact).to be_invalid
   end
+  it "is not valid with an invalid email" do
+    contact = build(:contact, email: 'mickeymouse')
+
+    expect(contact).to be_invalid
+  end
   it "is not valid without ip" do
     contact = build(:contact, ip: nil)
 
