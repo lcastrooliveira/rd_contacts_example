@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application written in rails to track user history navigation in a web site. It handles data sent through a POST request containing the URLs, IP address and Timestamp of a website that a user has visited with the [RD Page Tracker](https://github.com/lcastrooliveira/rd-page-tracker) installed.
 
-Things you may want to cover:
+# Specs
 
-* Ruby version
+* Ruby version 2.4.1
+* Rails 5.1.1
+* Bootstrap 3
+* PostgreSQL 9.4+ (It has to support jsonb columns)
 
-* System dependencies
+# Steps to Run
 
-* Configuration
+1. Clone this repo
+2. `bundle exec rake db:create`
+3. `bundle exec rake db:migrate`
+4. You also need to seed the admin user, therefore type `bundle exec rake db:seed`
+5. `rails s`
 
-* Database creation
+Once you've followed these steps you may log in with the default user in specified in `seeds.rb`
 
-* Database initialization
+# Run tests
 
-* How to run the test suite
+This project uses RSpec 3.x and Factory Girls to perform tests.
 
-* Services (job queues, cache servers, search engines, etc.)
+* `bundle exec rspec`
 
-* Deployment instructions
+## License
+ 
+The MIT License (MIT)
 
-* ...
+Copyright (c) 2017 Lucas Oliveira
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
