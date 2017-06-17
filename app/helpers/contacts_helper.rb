@@ -12,6 +12,6 @@ module ContactsHelper
     pages.each do |page|
       cool_names.push(PRETTY[page['url']])
     end
-    cool_names.join(',')
+    cool_names.join(' - ')
   end
 end

@@ -1,16 +1,18 @@
-<h1>Ola gente fina</h1>
+<h1>Latest Submissions</h1>
 <table>
   <thead>
     <th>Email</th>
-    <th>Páginas Visitadas</th>
-    <th>Potencial</th>
+    <th>IP</th>
+    <th>Visited Pages</th>
+    <th>Message</th>
   </thead>
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
         <td><%= link_to contact.email, contact_path(contact) %></td>
+        <td><%= contact.ip %></td>
         <td><%= pretty_urls(contact.pages) %></td>
-        <td>Alto</td>
+        <td><%= truncate(contact.message) %></td>
       </tr>
     <% end %>
   </tbody>
