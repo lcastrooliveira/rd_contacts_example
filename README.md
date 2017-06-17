@@ -14,10 +14,11 @@ An application written in rails to track user history navigation in a web site. 
 # Steps to Run
 
 1. Clone this repo
-2. `bundle exec rake db:create`
-3. `bundle exec rake db:migrate`
-4. You also need to seed the admin user, therefore type `bundle exec rake db:seed`
-5. `rails s`
+2. `bundle install`
+3. `bundle exec rake db:create`
+4. `bundle exec rake db:migrate`
+5. You also need to seed the admin user, therefore type `bundle exec rake db:seed`
+6. `rails s`
 
 Once you've followed these steps you may log in with the default user in specified in `seeds.rb`
 
