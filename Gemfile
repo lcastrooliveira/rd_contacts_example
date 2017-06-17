@@ -32,6 +32,7 @@ gem 'rails-controller-testing', '~> 1.0.1'
 gem 'devise', '~> 4.3.0'
 
 gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap-kaminari-views', '~> 0.0.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
