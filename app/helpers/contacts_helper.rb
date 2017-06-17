@@ -1,8 +1,8 @@
 module ContactsHelper
-  PRETTY = { '/index.html' => 'Home',
-             '/about.html' => 'Sobre',
-             '/contact.html' => 'Contato',
-             '/pricing.html' => 'Preço' }
+  PRETTY = { 'index.html' => 'Home',
+             'about.html' => 'Sobre',
+             'contact.html' => 'Contato',
+             'pricing.html' => 'Preço' }
   PRETTY.default = 'Desconhecida'
   PRETTY.freeze
 
@@ -10,7 +10,11 @@ module ContactsHelper
     return if pages.empty?
     cool_names = []
     pages.each do |page|
-      cool_names.push(PRETTY[page['url']])
+      if page['url'][-1] == '/'
+        cool_names.push('Home')
+      else
+        cool_names.push(PRETTY[page['url'].split('/')[-1]])
+      end
     end
     cool_names.join(' - ')
   end
