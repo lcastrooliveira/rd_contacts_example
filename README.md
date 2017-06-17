@@ -2,6 +2,8 @@
 
 An application written in rails to track user history navigation in a web site. It handles data sent through a POST request containing the URLs, IP address and Timestamp of a website that a user has visited with the [RD Page Tracker](https://github.com/lcastrooliveira/rd-page-tracker) installed.
 
+[Live Demo](https://rd-interest-registry.herokuapp.com)
+
 # Specs
 
 * Ruby version 2.4.1
