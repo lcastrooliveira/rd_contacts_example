@@ -14,4 +14,14 @@ module ContactsHelper
     end
     cool_names.join(' - ')
   end
+
+  def pretty_date(date)
+    return ' - ' unless date
+    begin
+      a = date.to_datetime
+      a.in_time_zone('Brasilia').strftime('%d/%m/%y %R %Z')
+    rescue ArgumentError
+      return ' - '
+    end
+  end
 end

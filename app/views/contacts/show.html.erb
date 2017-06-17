@@ -1,2 +1,31 @@
-<%= @contact.email %>
-<%= @contact.pages %>
+<h1>Contact Details</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @contact.email %></h3>
+      </div>
+      <div class="panel-body">
+        <h6>Message:</h6>
+        <blockquote>
+          <p><%= @contact.message %></p>
+        </blockquote>
+        <h6>Ip Address:</h6>
+        <%= @contact.ip %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <h3>Visited Pages</h3>
+    <% @contact.pages.each do |page| %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4><%= page['url'] %></h4>
+        </div>
+        <div class="panel-footer"><strong>timestamp:</strong> <%= pretty_date(page['timestamp']) %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

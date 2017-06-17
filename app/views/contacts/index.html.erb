@@ -1,5 +1,6 @@
 <h1>Latest Submissions</h1>
-<table>
+<table class="table table-bordered table-hover">
+  <caption>Green line: Contact has visited 4 pages</caption>
   <thead>
     <th>Email</th>
     <th>IP</th>
@@ -8,7 +9,7 @@
   </thead>
   <tbody>
     <% @contacts.each do |contact| %>
-      <tr>
+      <tr class="<%= 'success' if contact.pages.length >= 3 %>">
         <td><%= link_to contact.email, contact_path(contact) %></td>
         <td><%= contact.ip %></td>
         <td><%= pretty_urls(contact.pages) %></td>
