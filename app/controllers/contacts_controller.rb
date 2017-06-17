@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   protect_from_forgery with: :null_session, only: :create
 
   def index
-    @contacts = Contact.page params[:page]
+    @contacts = Contact.order(created_at: :desc).page params[:page]
   end
 
   def create
